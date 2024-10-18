@@ -8,5 +8,7 @@ func NewUserRepo() *UserRepo {
 
 
 func (us *UserRepo) GetInfo() string {
-	return "Hieu"
+	a := "132"
+	b := "sfads"
+	return a + b
 }
