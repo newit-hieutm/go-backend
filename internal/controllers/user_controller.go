@@ -5,6 +5,7 @@ import (
 
 	"github.com/gin-gonic/gin"
 	"github.com/newit-hieutm/go-backend/internal/services"
+	responseData "github.com/newit-hieutm/go-backend/pkg/response"
 )
 
 type UserController struct{
@@ -20,5 +21,5 @@ func NewUserController() *UserController{
 
 func (uc *UserController) MyInfo(c *gin.Context) {
 	myInfo :=  uc.userService.GetUserInfo()
-	c.JSON(http.StatusOK, gin.H{"myInfo": myInfo, "status": http.StatusOK})
+	responseData.RenderSuccess(c, myInfo, http.StatusOK, "success")
 }
