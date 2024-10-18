@@ -1,7 +1,11 @@
 package main
 
-import "fmt"
+import (
+	"github.com/newit-hieutm/go-backend/internal/routers"
+)
 
 func main() {
-	fmt.Println("Started!")
+  r := routers.NewRouter()
+
+  r.Run(":8888")
 }
