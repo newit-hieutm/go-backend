@@ -14,12 +14,7 @@ func NewRouter() *gin.Engine {
 
 	v1 := r.Group("/v1")
 	{
-		v1.GET("/ping", homeController.Welcome)
-		v1.PUT("/ping", Pongfunc)
-		v1.POST("/ping", Pongfunc)
-		v1.PATCH("/ping", Pongfunc)
-		v1.HEAD("/ping", Pongfunc)
-		v1.OPTIONS("/ping", Pongfunc)
+		v1.GET("/home", homeController.Welcome)
 	}
 
 	userRoutes := r.Group("users")
