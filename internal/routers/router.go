@@ -5,10 +5,13 @@ import (
 
 	"github.com/gin-gonic/gin"
 	"github.com/newit-hieutm/go-backend/internal/controllers"
+	"github.com/newit-hieutm/go-backend/internal/middlewares"
 )
 
 func NewRouter() *gin.Engine {
 	r := gin.Default()
+	r.Use(middlewares.UserZapLogger())
+	
 	homeController := controllers.NewHomeController()
 	userController := controllers.NewUserController()
 
