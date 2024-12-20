@@ -1,11 +1,9 @@
 package main
 
 import (
-	"github.com/newit-hieutm/go-backend/internal/routers"
+	"github.com/newit-hieutm/go-backend/internal/initialize"
 )
 
 func main() {
-  r := routers.NewRouter()
-
-  r.Run(":8888")
+	initialize.Run()
 }

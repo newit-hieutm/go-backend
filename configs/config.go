@@ -17,6 +17,9 @@ type Db struct {
 	User     string
 	Password string
 	Database string
+	Charset string
+	ParseTime bool
+	Loc string
 }
 
 type Security struct {

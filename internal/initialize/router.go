@@ -1,17 +1,15 @@
-package routers
+package initialize
 
 import (
-	"net/http"
-
 	"github.com/gin-gonic/gin"
 	"github.com/newit-hieutm/go-backend/internal/controllers"
 	"github.com/newit-hieutm/go-backend/internal/middlewares"
 )
 
-func NewRouter() *gin.Engine {
+func InitRouter() {
 	r := gin.Default()
 	r.Use(middlewares.UserZapLogger())
-	
+
 	homeController := controllers.NewHomeController()
 	userController := controllers.NewUserController()
 
@@ -25,11 +23,5 @@ func NewRouter() *gin.Engine {
 		userRoutes.GET("myinfo", userController.MyInfo)
 	}
 
-	return r
-}
-
-func Pongfunc(c *gin.Context) {
-	c.JSON(http.StatusOK, gin.H{
-		"message": "pong",
-	})
+	r.Run(":8888")
 }
